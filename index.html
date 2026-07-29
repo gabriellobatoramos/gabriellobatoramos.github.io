@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabriel Ramos</title>
+<meta name="description" content="Gabriel Ramos — PhD candidate in Finance, Imperial College London.">
+
+<meta property="og:title" content="Gabriel Ramos">
+<meta property="og:description" content="PhD candidate in Finance, Imperial College London.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --white:#FFFFFF;
+  --black:#0A0A0A;
+  --grey:#6E6E6E;
+  --hairline:#E3E3E3;
+
+  --display:"Cormorant Garamond", Georgia, serif;
+  --sans:"Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+  --sidebar:300px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--black);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);transition:opacity .15s ease}
+a:hover{opacity:.45}
+a:focus-visible{outline:2px solid var(--black);outline-offset:3px}
+
+/* ---------- frame ---------- */
+.frame{
+  max-width:1180px;margin:0 auto;padding:0 40px;
+  display:grid;grid-template-columns:var(--sidebar) 1fr;gap:64px;
+}
+
+/* ---------- sidebar ---------- */
+.side{
+  padding:56px 0 80px;
+  position:sticky;top:0;align-self:start;height:fit-content;
+}
+
+.name{
+  font-family:var(--display);
+  font-size:2.35rem;
+  font-weight:600;
+  line-height:1.06;
+  letter-spacing:.005em;
+  margin:0 0 8px;
+}
+.name a{border:0}
+.name a:hover{opacity:1}
+
+.title{
+  font-size:.68rem;font-weight:500;
+  letter-spacing:.24em;text-transform:uppercase;
+  color:var(--grey);
+  margin:0 0 6px;
+}
+.affiliation{
+  font-size:.68rem;font-weight:500;
+  letter-spacing:.24em;text-transform:uppercase;
+  color:var(--black);
+  margin:0 0 28px;
+}
+
+.side-block{border-top:1px solid var(--hairline);padding:26px 0}
+.side-block:last-child{border-bottom:1px solid var(--hairline)}
+
+.side-block .side-label{
+  font-size:.74rem;font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;
+  color:var(--black);
+  margin:0 0 12px;
+}
+.side-block p{margin:0 0 6px;color:var(--grey);font-size:.86rem;line-height:1.55}
+.side-block p:last-child{margin-bottom:0}
+.side-block strong{color:var(--black);font-weight:500}
+.side-block a{font-size:.86rem}
+
+/* ---------- main ---------- */
+.main{padding:60px 0 72px}
+
+.section{margin-bottom:60px}
+.section:last-child{margin-bottom:0}
+
+h2{
+  font-size:1.08rem;font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;
+  margin:0 0 10px;
+}
+.section-rule{border:0;border-top:1px solid var(--black);margin:0 0 30px}
+
+.paper{padding:0 0 26px;margin:0 0 26px;border-bottom:1px solid var(--hairline)}
+.paper:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+
+.paper-title{
+  font-family:var(--sans);
+  font-size:1.02rem;
+  font-weight:600;
+  line-height:1.45;
+  letter-spacing:.002em;
+  margin:0 0 6px;
+}
+.paper-title a{border:0}
+.paper-title a:hover{opacity:.45}
+
+.coauthors{color:var(--grey);font-size:.86rem;margin:0 0 3px}
+.coauthors a{color:var(--grey);border-bottom:1px solid var(--hairline)}
+.coauthors a:hover{color:var(--black);border-bottom-color:var(--black);opacity:1}
+.venue{font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px}
+.venue em{font-style:normal;color:var(--grey)}
+.venue{margin-bottom:10px}
+
+/* abstract disclosure */
+details{margin:0}
+summary{
+  list-style:none;cursor:pointer;display:inline-block;
+  font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--grey);
+}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ "}
+details[open] summary::before{content:"− "}
+summary:hover{color:var(--black)}
+summary:focus-visible{outline:2px solid var(--black);outline-offset:3px}
+.abstract{margin:14px 0 0;font-size:.82rem;line-height:1.7;color:#333;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+
+.draft-note{
+  margin:14px 0 0;
+  font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--grey);
+}
+
+footer{
+  margin-top:22px;
+  font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);
+}
+
+/* ---------- mobile ---------- */
+@media (max-width:880px){
+  .frame{grid-template-columns:1fr;gap:0;padding:0 24px}
+  .side{position:static;padding:40px 0 8px}
+  .title{margin-bottom:40px}
+  .main{padding:48px 0 64px}
+  .name{font-size:2rem}
+  .section{margin-bottom:64px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <aside class="side">
+    <h1 class="name">Gabriel Ramos</h1>
+    <p class="title">PhD Candidate in Finance</p>
+    <p class="affiliation">Imperial College London</p>
+
+    <div class="side-block">
+      <p class="side-label">Curriculum Vitae</p>
+      <p><a href="LobatoRamos_Gabriel.pdf">Download PDF</a></p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Contact</p>
+      <p><a href="mailto:g.lobato-ramos23@imperial.ac.uk">g.lobato-ramos23@imperial.ac.uk</a></p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Education</p>
+      <p><strong>PhD in Finance</strong>, ongoing<br>Imperial College London</p>
+      <p><strong>MSc Economics and Finance</strong>, 2019<br>Universitat Pompeu Fabra</p>
+      <p><strong>BSc Statistics</strong>, 2017<br>University of Brasília</p>
+    </div>
+
+    <div class="side-block">
+      <p class="side-label">Address</p>
+      <p>Imperial College Business School<br>South Kensington Campus<br>London SW7 2AZ, United Kingdom</p>
+    </div>
+
+    <footer>Last updated July 2026</footer>
+  </aside>
+
+  <main class="main">
+
+    <section class="section" id="working-papers">
+      <h2>Working Papers</h2>
+      <hr class="section-rule">
+
+      <article class="paper">
+        <h3 class="paper-title">The Local Cost of Partisanship</h3>
+        <p class="coauthors">with Chun Zhao</p>
+        <details>
+          <summary>Abstract</summary>
+          <p class="abstract">Whether partisanship reaches into local economies, and through what mechanism, remains an open question. We provide an answer using the U.S. municipal bond market. Combining a close-gubernatorial-election design that delivers quasi-random variation in the partisan alignment between state and federal executives with the yields at which local governments borrow, we establish three findings. First, municipal bonds issued in misaligned states carry materially higher yields. Second, the increase is not driven by changes in the local tax base or by investor pessimism; tax revenues and revenue-bond yields are unaffected. It reflects a contraction in federal intergovernmental transfers, concentrated in the discretionary categories the federal executive controls. Third, the effect reaches the real economy: misaligned counties lose private-sector employment and personal income.</p>
+        </details>
+        <p class="draft-note">Draft available upon request</p>
+      </article>
+
+      <article class="paper">
+        <h3 class="paper-title"><a href="polarizing-corporations.pdf">Polarizing Corporations: Does Talent Flow to “Good” Firms?</a></h3>
+        <p class="coauthors">with <a href="https://emanuelecolonnelli.com/">Emanuele Colonnelli</a>, <a href="https://sites.google.com/view/timothymcquade/home">Tim McQuade</a>, <a href="https://thomas-rauter.com/">Thomas Rauter</a>, and <a href="https://www.linkedin.com/in/olivia-xiong-173257163/?skipRedirect=true">Olivia Xiong</a></p>
+        <p class="venue">Revise &amp; Resubmit · <em>Journal of Political Economy</em></p>
+        <details>
+          <summary>Abstract</summary>
+          <p class="abstract">We conduct a field experiment in partnership with the largest job platform in Brazil to study how environmental, social, and governance (ESG) practices of firms affect talent allocation. We find both an average job-seeker’s preference for ESG and a large degree of heterogeneity across sociodemographic groups, with the strongest preference displayed by highly educated, white, and politically liberal individuals. Combining the experimental estimates with matched employer-employee administrative microdata, we estimate an equilibrium model of the labor market in which firms endogenously adopt ESG. Counterfactual analyses show that ESG preferences draw skilled workers toward high-productivity firms, increasing allocative efficiency, total output, and worker welfare.</p>
+        </details>
+      </article>
+
+    </section>
+
+    <section class="section" id="publications">
+      <h2>Publications</h2>
+      <hr class="section-rule">
+
+      <article class="paper">
+        <h3 class="paper-title"><a href="esg-nonwage-amenity.pdf">ESG is the Most Polarizing Nonwage Amenity: Evidence from a Field Experiment in Brazil</a></h3>
+        <p class="coauthors">with <a href="https://emanuelecolonnelli.com/">Emanuele Colonnelli</a>, <a href="https://sites.google.com/view/timothymcquade/home">Tim McQuade</a>, <a href="https://thomas-rauter.com/">Thomas Rauter</a>, and <a href="https://www.linkedin.com/in/olivia-xiong-173257163/?skipRedirect=true">Olivia Xiong</a></p>
+        <p class="venue"><em>AEA Papers and Proceedings</em>, 115, May 2025: 146–152</p>
+      </article>
+
+    </section>
+
+    <section class="section" id="policy">
+      <h2>Policy Writing</h2>
+      <hr class="section-rule">
+
+      <article class="paper">
+        <h3 class="paper-title"><a href="https://www.caixabankresearch.com/en/economics-markets/financial-markets/financial-cycle-and-era-low-interest-rates-change-narrative">The Financial Cycle and the Era of Low Interest Rates: A Change of Narrative?</a></h3>
+        <p class="coauthors">with <a href="https://www.caixabankresearch.com/en/author/javier-garcia-arenas">Javier García Arenas</a>, <a href="https://www.caixabankresearch.com/en/author/adria-morron-salmeron">Adrià Morrón Salmerón</a>, and <a href="https://sites.google.com/view/pablopastorycamarasa/home">Pablo Pastor y Camarasa</a></p>
+        <p class="venue"><em>CaixaBank Research</em>, March 2020</p>
+      </article>
+
+      <article class="paper">
+        <h3 class="paper-title"><a href="https://www.caixabankresearch.com/en/economics-markets/monetary-policy/sense-and-sensibility-ecbs-communication">The “Sense and Sensibility” of the ECB’s Communication</a></h3>
+        <p class="coauthors">with <a href="https://www.caixabankresearch.com/en/author/adria-morron-salmeron">Adrià Morrón Salmerón</a></p>
+        <p class="venue"><em>CaixaBank Research</em>, November 2019</p>
+      </article>
+
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>
